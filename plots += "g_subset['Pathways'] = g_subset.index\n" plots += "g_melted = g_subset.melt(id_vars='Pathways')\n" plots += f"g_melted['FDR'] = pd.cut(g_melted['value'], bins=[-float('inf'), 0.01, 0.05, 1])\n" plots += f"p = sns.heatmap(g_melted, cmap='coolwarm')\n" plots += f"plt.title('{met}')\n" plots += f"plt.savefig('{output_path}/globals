@@ -1,0 +1,127 @@
+import os
+SERVER_PATH = ""
+ROOT_PATH = os.path.join(SERVER_PATH, "stress/")
+GLOBAL_DATA = os.path.join(SERVER_PATH, "data/")
+EXPRESSION_PATH = os.path.join(ROOT_PATH, "Expression/")
+CORRELATION_PATH = os.path.join(ROOT_PATH, "Correlation/")
+R_DATA_DIR = os.path.join(ROOT_PATH, "R/")
+P_VALUE_THRESHOLD = 0.05
+FDR_METHOD = "fdr" # 'bonferroni', 'hochberg', 'fdr', 'P'
+GO_OBO = os.path.join(GLOBAL_DATA, "OBO/goslim_plant.obo")
+MIN_GENES_PATHWAY_THRESHOLD = 5
+MAX_LEVELS = 1
+PATHWAYS = ['mapman']
+
+
+2. **`intersect_data_type_heatmap` Conversion**:
+```python
+import pandas as pd
+
+def intersect_data_type_heatmap(type_, ref, output_path):
+ ref_path = {}
+ 
+ with open(os.path.join(ROOT_PATH, f"{type_}.txt"), 'r') as file:
+     for line in file:
+         parts = line.strip().split("\t")
+         if type_ == 'mapman':
+             annot = parts[1].split(".")
+             string = ""
+             for a1 in annot:
+                 string += f"{a1}."
+                 ref_path[string] = string
+         else:
+             ref_path[parts[1]] = parts[1]
+
+ mets = list(ref.keys())[-1]
+ states = sorted(ref.keys())
+ 
+ if len(states) > 1:
+     heatmap_on_states(ref, type_, mets, states, output_path, ref_path)
+ heatmap_on_metabol(ref, type_, output_path, ref_path)
+3.import seaborn as sns
+import matplotlib.pyplot as plt
+
+def heatmap_on_metabol(ref, type_, output_path, ref_path):
+for state in sorted(ref.keys()):
+mets = sorted(ref[state].keys())
+    with open(os.path.join(output_path, f"heatmap_{state}.{type_}.txt"), 'w') as hm_file:
+        hm_file.write("\t" + "\t".join(mets) + "\n")
+        
+        for path in sorted(ref_path.keys()):
+            p = 1
+            ref_id_temp = {}
+            level = "1"
+            count_genes_pathways = ""
+            
+            str_data = ""
+            for met in mets:
+                str_data += set_defined(ref[state], path, met, p, ref_id_temp, met)
+
+                if "level" in ref[state][met][path]:
+                    level = ref[state][met][path]["level"]
+                if "GENES_PATHWAY" in ref[state][met][path]:
+                    count_genes_pathways = ref[state][met][path]["GENES_PATHWAY"]
+            
+            if p < P_VALUE_THRESHOLD:
+                ref_id_temp[state][path] = ref_id_temp
+                path = f"{path} [{level},{count_genes_pathways}]"
+                if count_genes_pathways >= 1:
+                    hm_file.write(f"{path}\t{str_data}\n")
+    
+    set_gplots_tiles(output_path, f"heatmap_{state}.{type_}.txt", state, mets)
+4.###def heatmap_on_states(ref, type_, mets, states, output_path, ref_path):
+for met in sorted(ref[mets].keys()):
+with open(os.path.join(output_path, f"heatmap_{met}.{type_}.metabol.txt"), 'w') as hm_file:
+hm_file.write("\t" + "\t".join(states) + "\n")
+###
+        for path in sorted(ref_path.keys()):
+            p = 1
+            str_data = ""
+            ref_id_temp = {}
+            
+            for state in states:
+                str_data += set_defined(ref[state], path, met, p, ref_id_temp, state)
+            
+            if p < P_VALUE_THRESHOLD:
+                ref_id_temp[met][path] = ref_id_temp
+                path = path.replace("'", "").replace(",", "")
+                hm_file.write(f"{path}\t{str_data}\n")
+    
+    set_gplots_tiles(output_path, f"heatmap_{met}.{type_}.metabol.txt", met, states)
+
+4. **`set_defined` Conversion**:
+   ```python
+def set_defined(ref, path, met, p, ref_id, state):
+    stat = FDR_METHOD
+    
+    if path not in ref[met]:
+        ref[met][path][stat] = 1
+        ref_id[state]["EC"] = "NA"
+        ref_id[state]["GENES"] = "NA"
+    
+    if ref[met][path][stat] < P_VALUE_THRESHOLD:
+        ref_id[state]["EC"] = ref[met][path]["EC"]
+        ref_id[state]["GENES"] = ref[met][path]["GENES"]
+    
+    if ref[met][path][stat] > P_VALUE_THRESHOLD:
+        ref_id[state]["EC"] = "NA"
+        ref_id[state]["GENES"] = "NA"
+    
+    if p > P_VALUE_THRESHOLD:
+        p = ref[met][path][stat]
+    
+    return f"{ref[met][path][stat]}\t"
+5.Heatmap Visualization:
+You can use seaborn and matplotlib to generate the heatmaps:
+def set_gplots_tiles(output_path, path, met, states):
+plots = ""
+plots += f"g = pd.read_csv('{path}', sep='\t')\n"
+plots += f"g.columns = {states}\n"
+plots += f"g_subset = g.iloc[:, :len(states)]\n"
+plots += "g_subset['Pathways'] = g_subset.index\n"
+plots += "g_melted = g_subset.melt(id_vars='Pathways')\n"
+plots += f"g_melted['FDR'] = pd.cut(g_melted['value'], bins=[-float('inf'), 0.01, 0.05, 1])\n"
+plots += f"p = sns.heatmap(g_melted, cmap='coolwarm')\n"
+plots += f"plt.title('{met}')\n"
+plots += f"plt.savefig('{output_path}/heatmap_{met}_state.pdf')\n"
+
