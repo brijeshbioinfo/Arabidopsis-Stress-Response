@@ -1,0 +1,41 @@
+import pickle
+
+def set_map_man(path, path_out):
+    bin_ref = {}
+    with open(path, 'rb') as f:
+        ref = pickle.load(f)  # Deserialize the reference object
+    ref_gene_path = {}
+
+    for met in sorted(ref.keys()):
+        for bin_ in sorted(ref[met].keys()):
+            # Match the bin structure as in Perl
+            bin_ = bin_.split("[")
+            annot = bin_[0].split(".")
+            bin_ = bin_[1][:-1].split(".")
+            level = 0
+
+            for a in annot:
+                level += 1
+                a = a.replace("\"", "")  # Remove quotes as in Perl's regex replace
+                set_term(a, bin_, bin_ref, ref, met, level, ref_gene_path)
+
+    # Serialize the bin_ref to the output path
+    with open(path_out, 'wb') as f_out:
+        pickle.dump(bin_ref, f_out)
+
+
+def set_term(a, bin_, bin_met, ref, met, level, ref_gene_path):
+    if a not in bin_met.get(met, {}).get(a, {}):
+        # Initialize the terms if not already defined
+        bin_met.setdefault(met, {}).setdefault(a, {})
+        bin_met[met][a]["CORR"] = ref[met][bin_]["CORR"]
+        bin_met[met][a]["CORR_GENES_METABOLOM"] = ref[met][bin_]["CORR_GENES_METABOLOM"]
+        bin_met[met][a]["OVERALL_GENES_PATWAYS"] = ref[met][bin_]["OVERALL_GENES_PATWAYS"]
+        bin_met[met][a]["GENES"] = ref[met][bin_]["GENES"]
+        
+        ref_gene_path[a] = 1
+        bin_met[met][a]["level"] = level
+    else:
+        # If already defined, accumulate the values
+        bin_met[met][a]["CORR"] += ref[met][bin_]["CORR"]
+        bin_met[met][a]["GENES"] += ref[met][bin_]["GENES"]
