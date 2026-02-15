@@ -1,0 +1,568 @@
+AT1G35740	minor CHO metabolism.callose	3.6
+AT4G35650	TCA / org. transformation.other organic acid transformaitons.IDH	8.2.4
+AT4G20990	TCA / org. transformation.carbonic anhydrases	8.3
+AT1G14110	cell wall.hemicellulose synthesis	10.3
+AT3G62680	cell wall.cell wall proteins.proline rich proteins	10.5.2
+AT5G26120	cell wall.degradation.mannan-xylose-arabinose-fucose	10.6.2
+AT4G37950	cell wall.degradation.pectate lyases and polygalacturonases	10.6.3
+AT3G07850	cell wall.degradation.pectate lyases and polygalacturonases	10.6.3
+AT2G43870	cell wall.degradation.pectate lyases and polygalacturonases	10.6.3
+AT5G57530	cell wall.modification	10.7
+AT5G39270	cell wall.modification	10.7
+AT1G11370	cell wall.pectin*esterases.PME	10.8.1
+AT4G02320	cell wall.pectin*esterases.misc	10.8.99
+AT5G51490	cell wall.pectin*esterases.misc	10.8.99
+AT5G40420	lipid metabolism.TAG synthesis	11.4
+AT3G45070	"lipid metabolism.''exotics'' (steroids, squalene etc)"	11.8
+AT2G03770	"lipid metabolism.''exotics'' (steroids, squalene etc)"	11.8
+AT1G28170	"lipid metabolism.''exotics'' (steroids, squalene etc)"	11.8
+AT1G28650	lipid metabolism.lipid degradation.lipases	11.9.2
+AT5G58050	lipid metabolism.lipid degradation.lysophospholipases.glycerophosphodiester phosphodiesterase	11.9.3.3
+AT3G44560	lipid metabolism.lipid degradation.beta-oxidation.acyl CoA reductase	11.9.4.13
+AT3G55870	amino acid metabolism.synthesis.aromatic aa.tryptophan.anthranilate synthase	13.1.6.5.1
+AT5G37860	"metal handling.binding, chelation and storage"	15.2
+AT3G32040	secondary metabolism.isoprenoids.non-mevalonate pathway.geranylgeranyl pyrophosphate synthase	16.1.1.10
+AT3G29420	secondary metabolism.isoprenoids.non-mevalonate pathway.geranylgeranyl pyrophosphate synthase	16.1.1.10
+AT1G61680	secondary metabolism.isoprenoids.terpenoids	16.1.5
+AT5G48010	secondary metabolism.isoprenoids.terpenoids	16.1.5
+AT3G14520	secondary metabolism.isoprenoids.terpenoids	16.1.5
+AT3G50300	secondary metabolism.phenylpropanoids	16.2
+AT2G23910	secondary metabolism.phenylpropanoids	16.2
+AT1G51490	secondary metabolism.N misc.cyanogenic glycosides	16.4.3.1
+AT1G65880	secondary metabolism.sulfur-containing.glucosinolates.synthesis.aliphatic.benzoate-CoA ligase	16.5.1.1.1.12
+AT2G37700	secondary metabolism.wax	16.7
+AT5G54010	secondary metabolism.flavonoids.dihydroflavonols	16.8.3
+AT1G61720	secondary metabolism.flavonoids.dihydroflavonols.dihydrokaempferol 4-reductase	16.8.3.1
+AT5G63600	secondary metabolism.flavonoids.flavonols	16.8.4
+AT4G13660	secondary metabolism.flavonoids.isoflavonols	16.8.5
+AT1G50580	hormone metabolism.auxin.synthesis-degradation	17.2.1
+AT3G53250	hormone metabolism.auxin.induced-regulated-responsive-activated	17.2.3
+AT4G13790	hormone metabolism.auxin.induced-regulated-responsive-activated	17.2.3
+AT1G43040	hormone metabolism.auxin.induced-regulated-responsive-activated	17.2.3
+AT2G24400	hormone metabolism.auxin.induced-regulated-responsive-activated	17.2.3
+AT2G47430	hormone metabolism.cytokinin.signal transduction	17.4.2
+AT5G20550	hormone metabolism.ethylene.synthesis-degradation	17.5.1
+AT5G65800	hormone metabolism.ethylene.synthesis-degradation.1-aminocyclopropane-1-carboxylate synthase	17.5.1.1
+AT1G60380	hormone metabolism.jasmonate.synthesis-degradation	17.7.1
+AT1G09400	hormone metabolism.jasmonate.synthesis-degradation.12-Oxo-PDA-reductase	17.7.1.5
+AT4G31470	stress.biotic	20.1
+AT5G17540	stress.biotic	20.1
+AT2G43600	stress.biotic	20.1
+AT1G33900	stress.biotic	20.1
+AT5G02140	stress.biotic	20.1
+AT4G30070	stress.biotic	20.1
+AT5G38330	stress.biotic	20.1
+AT1G75830	stress.biotic	20.1
+AT2G02120	stress.biotic	20.1
+AT2G44110	stress.biotic.signalling.MLO-like	20.1.3.1
+AT5G49140	stress.biotic.PR-proteins	20.1.7
+AT4G27190	stress.biotic.PR-proteins	20.1.7
+AT5G45210	stress.biotic.PR-proteins	20.1.7
+AT1G72290	stress.biotic.PR-proteins.proteinase inhibitors.trypsin inhibitor	20.1.7.6.1
+AT1G47540	stress.biotic.PR-proteins.proteinase inhibitors.trypsin inhibitor	20.1.7.6.1
+AT5G43510	stress.biotic.PR-proteins.plant defensins	20.1.7.12
+AT1G52560	stress.abiotic.heat	20.2.1
+AT4G27670	stress.abiotic.heat	20.2.1
+AT4G15755	stress.abiotic.cold	20.2.2
+AT1G62320	stress.abiotic.drought/salt	20.2.3
+AT4G14060	stress.abiotic.unspecified	20.2.99
+AT2G03720	stress.abiotic.unspecified	20.2.99
+AT2G34700	stress.abiotic.unspecified	20.2.99
+AT3G11920	redox.glutaredoxins	21.4
+AT1G48130	redox.peroxiredoxin.PER1	21.5.2
+AT4G29570	nucleotide metabolism.degradation	23.2
+AT4G29600	nucleotide metabolism.degradation	23.2
+AT3G57620	Biodegradation of Xenobiotics	24
+AT2G43840	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT2G36760	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT1G73160	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT2G23250	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT5G41250	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT5G05880	misc.UDP glucosyl and glucoronyl transferases	26.2
+AT5G24550	"misc.gluco-, galacto- and mannosidases"	26.3
+AT2G44550	"misc.gluco-, galacto- and mannosidases.endoglucanase"	26.3.4
+AT1G21860	"misc.oxidases - copper, flavone etc."	26.7
+AT1G31670	"misc.oxidases - copper, flavone etc."	26.7
+AT1G30710	"misc.nitrilases, *nitrile lyases, berberine bridge enzymes, reticuline oxidases, troponine reductases"	26.8
+AT1G34575	"misc.nitrilases, *nitrile lyases, berberine bridge enzymes, reticuline oxidases, troponine reductases"	26.8
+AT5G44360	"misc.nitrilases, *nitrile lyases, berberine bridge enzymes, reticuline oxidases, troponine reductases"	26.8
+AT1G74110	misc.cytochrome P450	26.10
+AT3G53290	misc.cytochrome P450	26.10
+AT1G64940	misc.cytochrome P450	26.10
+AT4G31940	misc.cytochrome P450	26.10
+AT3G53300	misc.cytochrome P450	26.10
+AT3G20950	misc.cytochrome P450	26.10
+AT1G65340	misc.cytochrome P450	26.10
+AT1G74540	misc.cytochrome P450	26.10
+AT3G52970	misc.cytochrome P450	26.10
+AT5G04630	misc.cytochrome P450	26.10
+AT5G06900	misc.cytochrome P450	26.10
+AT5G19880	misc.peroxidases	26.12
+AT5G06730	misc.peroxidases	26.12
+AT3G50990	misc.peroxidases	26.12
+AT5G23470	misc.acid and other phosphatases	26.13
+AT5G49870	misc.myrosinases-lectin-jacalin	26.16
+AT1G60500	misc.dynamin	26.17
+AT3G17220	misc.invertase/pectin methylesterase inhibitor family protein	26.18
+AT1G73780	misc.protease inhibitor/seed storage/lipid transfer protein (LTP) family protein	26.21
+AT3G52130	misc.protease inhibitor/seed storage/lipid transfer protein (LTP) family protein	26.21
+AT2G17845	misc.short chain dehydrogenase/reductase (SDR)	26.22
+AT2G47120	misc.short chain dehydrogenase/reductase (SDR)	26.22
+AT2G27570	misc.sulfotransferase	26.25
+AT3G51210	misc.sulfotransferase	26.25
+AT1G71120	misc.GDSL-motif lipase	26.28
+AT1G01760	RNA.processing	27.1
+AT1G18050	RNA.processing	27.1
+AT3G55930	RNA.processing.splicing	27.1.1
+AT5G18810	RNA.processing.splicing	27.1.1
+AT1G27720	RNA.transcription	27.2
+AT2G38340	"RNA.regulation of transcription.AP2/EREBP, APETALA2/Ethylene-responsive element binding protein family"	27.3.3
+AT1G77200	"RNA.regulation of transcription.AP2/EREBP, APETALA2/Ethylene-responsive element binding protein family"	27.3.3
+AT5G19790	"RNA.regulation of transcription.AP2/EREBP, APETALA2/Ethylene-responsive element binding protein family"	27.3.3
+AT5G17430	"RNA.regulation of transcription.AP2/EREBP, APETALA2/Ethylene-responsive element binding protein family"	27.3.3
+AT1G34410	"RNA.regulation of transcription.ARF, Auxin Response Factor family"	27.3.4
+AT4G09820	"RNA.regulation of transcription.bHLH,Basic Helix-Loop-Helix family"	27.3.6
+AT1G27740	"RNA.regulation of transcription.bHLH,Basic Helix-Loop-Helix family"	27.3.6
+AT2G25990	"RNA.regulation of transcription.C2C2(Zn) CO-like, Constans-like zinc finger family"	27.3.7
+AT1G69180	RNA.regulation of transcription.C2C2(Zn) YABBY family	27.3.10
+AT2G17180	RNA.regulation of transcription.C2H2 zinc finger family	27.3.11
+AT2G37430	RNA.regulation of transcription.C2H2 zinc finger family	27.3.11
+AT3G49950	RNA.regulation of transcription.GRAS transcription factor family	27.3.21
+AT1G72080	"RNA.regulation of transcription.HB,Homeobox transcription factor family"	27.3.22
+AT3G03260	"RNA.regulation of transcription.HB,Homeobox transcription factor family"	27.3.22
+AT5G46010	"RNA.regulation of transcription.HB,Homeobox transcription factor family"	27.3.22
+AT4G18870	"RNA.regulation of transcription.HSF,Heat-shock transcription factor family"	27.3.23
+AT2G41690	"RNA.regulation of transcription.HSF,Heat-shock transcription factor family"	27.3.23
+AT1G65330	RNA.regulation of transcription.MADS box transcription factor family	27.3.24
+AT3G04100	RNA.regulation of transcription.MADS box transcription factor family	27.3.24
+AT3G66656	RNA.regulation of transcription.MADS box transcription factor family	27.3.24
+AT5G51860	RNA.regulation of transcription.MADS box transcription factor family	27.3.24
+AT2G40210	RNA.regulation of transcription.MADS box transcription factor family	27.3.24
+AT2G30380	RNA.regulation of transcription.MYB domain transcription factor family	27.3.25
+AT3G48920	RNA.regulation of transcription.MYB domain transcription factor family	27.3.25
+AT3G01530	RNA.regulation of transcription.MYB domain transcription factor family	27.3.25
+AT1G69810	RNA.regulation of transcription.WRKY domain transcription factor family	27.3.32
+AT5G13080	RNA.regulation of transcription.WRKY domain transcription factor family	27.3.32
+AT1G68880	RNA.regulation of transcription.bZIP transcription factor family	27.3.35
+AT2G30340	"RNA.regulation of transcription.AS2,Lateral Organ Boundaries Gene Family"	27.3.37
+AT5G18000	RNA.regulation of transcription.B3 transcription factor family	27.3.41
+AT4G00390	RNA.regulation of transcription.GeBP like	27.3.49
+AT3G52270	RNA.regulation of transcription.General Transcription	27.3.50
+AT4G27330	RNA.regulation of transcription.putative transcription regulator	27.3.67
+AT1G04050	RNA.regulation of transcription.SET-domain transcriptional regulator family	27.3.69
+AT4G01340	RNA.regulation of transcription.unclassified	27.3.99
+AT2G25370	RNA.regulation of transcription.unclassified	27.3.99
+AT3G04570	RNA.regulation of transcription.unclassified	27.3.99
+AT5G07260	RNA.regulation of transcription.unclassified	27.3.99
+AT5G05070	RNA.regulation of transcription.unclassified	27.3.99
+AT2G21690	RNA.RNA binding	27.4
+AT5G04210	RNA.RNA binding	27.4
+AT4G08750	RNA.RNA binding	27.4
+AT3G59720	DNA.synthesis/chromatin structure	28.1
+AT2G45230	DNA.synthesis/chromatin structure	28.1
+AT2G13930	DNA.synthesis/chromatin structure	28.1
+AT5G55875	DNA.synthesis/chromatin structure	28.1
+AT4G31900	DNA.synthesis/chromatin structure	28.1
+AT5G20800	DNA.synthesis/chromatin structure	28.1
+AT3G42420	DNA.synthesis/chromatin structure	28.1
+AT1G65810	DNA.synthesis/chromatin structure	28.1
+AT5G17720	DNA.synthesis/chromatin structure	28.1
+AT2G16670	DNA.synthesis/chromatin structure	28.1
+AT1G60020	DNA.synthesis/chromatin structure	28.1
+AT4G05610	DNA.synthesis/chromatin structure	28.1
+AT5G37030	DNA.synthesis/chromatin structure	28.1
+AT5G37140	DNA.synthesis/chromatin structure	28.1
+AT1G63210	DNA.synthesis/chromatin structure	28.1
+AT2G05020	DNA.synthesis/chromatin structure	28.1
+AT3G30510	DNA.synthesis/chromatin structure.retrotransposon/transposase	28.1.1
+AT5G44415	DNA.synthesis/chromatin structure.retrotransposon/transposase	28.1.1
+AT4G04070	DNA.synthesis/chromatin structure.retrotransposon/transposase	28.1.1
+AT3G10100	DNA.synthesis/chromatin structure.retrotransposon/transposase	28.1.1
+AT2G07430	DNA.synthesis/chromatin structure.retrotransposon/transposase.gypsy-like retrotransposon	28.1.1.1
+AT3G11970	DNA.synthesis/chromatin structure.retrotransposon/transposase.gypsy-like retrotransposon	28.1.1.1
+AT4G04150	DNA.synthesis/chromatin structure.retrotransposon/transposase.gypsy-like retrotransposon	28.1.1.1
+AT3G59720	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT2G13930	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT1G21290	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT1G36040	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT5G55875	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT1G43886	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT1G70010	DNA.synthesis/chromatin structure.retrotransposon/transposase.copia-like retrotransposon	28.1.1.3
+AT3G17290	DNA.synthesis/chromatin structure.retrotransposon/transposase.hat-like transposase	28.1.1.4
+AT1G35480	DNA.synthesis/chromatin structure.retrotransposon/transposase.hat-like transposase	28.1.1.4
+AT1G43840	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT2G11690	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT1G44070	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT4G08010	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT1G36190	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT2G10000	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT3G30330	DNA.synthesis/chromatin structure.retrotransposon/transposase.CACTA-like transposase	28.1.1.5
+AT3G33377	DNA.synthesis/chromatin structure.retrotransposon/transposase.mutator-like transposase	28.1.1.7
+AT2G07780	DNA.synthesis/chromatin structure.retrotransposon/transposase.mutator-like transposase	28.1.1.7
+AT4G08680	DNA.synthesis/chromatin structure.retrotransposon/transposase.mutator-like transposase	28.1.1.7
+AT4G35520	DNA.repair	28.2
+AT1G33460	DNA.unspecified	28.99
+AT2G15810	DNA.unspecified	28.99
+AT2G13720	DNA.unspecified	28.99
+AT2G07740	DNA.unspecified	28.99
+AT1G34842	DNA.unspecified	28.99
+AT2G11150	DNA.unspecified	28.99
+AT3G19184	DNA.unspecified	28.99
+AT1G67240	DNA.unspecified	28.99
+AT2G07780	DNA.unspecified	28.99
+AT4G29090	DNA.unspecified	28.99
+AT2G14420	DNA.unspecified	28.99
+AT5G09490	protein.synthesis.ribosomal protein.eukaryotic.40S subunit.S15	29.2.1.2.1.15
+AT5G40040	protein.synthesis.ribosomal protein.eukaryotic.60S subunit.P2	29.2.1.2.2.82
+AT1G35200	protein.synthesis.ribosomal protein.eukaryotic.60S subunit.L4/L1	29.2.1.2.2.141
+AT3G58390	protein.synthesis.release	29.2.5
+AT3G44840	protein.postranslational modification	29.4
+AT3G06640	protein.postranslational modification	29.4
+AT4G20650	protein.postranslational modification	29.4
+AT3G59830	protein.postranslational modification	29.4
+AT5G51800	protein.postranslational modification	29.4
+AT5G55090	protein.postranslational modification	29.4
+AT3G20530	protein.postranslational modification.kinase.receptor like cytoplasmatic kinase VII	29.4.1.57
+AT5G61550	protein.postranslational modification.kinase.receptor like cytoplasmatic kinase IX	29.4.1.59
+AT5G58840	protein.degradation.subtilases	29.5.1
+AT4G10510	protein.degradation.subtilases	29.5.1
+AT5G05050	protein.degradation.cysteine protease	29.5.3
+AT1G03720	protein.degradation.cysteine protease	29.5.3
+AT5G17080	protein.degradation.cysteine protease	29.5.3
+AT3G30640	protein.degradation.cysteine protease	29.5.3
+AT2G22960	protein.degradation.serine protease	29.5.5
+AT2G35570	protein.degradation.serine protease	29.5.5
+AT3G05790	protein.degradation.serine protease	29.5.5
+AT2G05850	protein.degradation.serine protease	29.5.5
+AT2G18080	protein.degradation.serine protease	29.5.5
+AT3G28520	protein.degradation.AAA type	29.5.9
+AT2G32360	protein.degradation.ubiquitin.ubiquitin	29.5.11.1
+AT1G36340	protein.degradation.ubiquitin.E2	29.5.11.3
+AT5G37560	protein.degradation.ubiquitin.E3.RING	29.5.11.4.2
+AT1G68940	protein.degradation.ubiquitin.E3.RING	29.5.11.4.2
+AT2G03170	protein.degradation.ubiquitin.E3.SCF.SKP	29.5.11.4.3.1
+AT3G62440	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT5G41490	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT3G22650	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT4G19250	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT1G32600	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT4G11745	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT4G22420	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT5G18160	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT1G47765	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT4G05490	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT3G22940	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT3G49450	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT3G08750	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT3G20030	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT4G13985	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT5G52620	protein.degradation.ubiquitin.E3.SCF.FBOX	29.5.11.4.3.2
+AT5G11210	signalling.in sugar and nutrient physiology	30.1.1
+AT3G21340	signalling.receptor kinases.leucine rich repeat I	30.2.1
+AT1G29740	signalling.receptor kinases.leucine rich repeat VIII-2	30.2.8.2
+AT5G39390	signalling.receptor kinases.leucine rich repeat XII	30.2.12
+AT5G28680	signalling.receptor kinases.Catharanthus roseus-like RLK1	30.2.16
+AT3G55550	signalling.receptor kinases.legume-lectin	30.2.19
+AT1G70450	signalling.receptor kinases.proline extensin like	30.2.22
+AT3G24540	signalling.receptor kinases.proline extensin like	30.2.22
+AT3G24400	signalling.receptor kinases.proline extensin like	30.2.22
+AT1G61390	signalling.receptor kinases.S-locus glycoprotein like	30.2.24
+AT5G02070	signalling.receptor kinases.wall associated kinase	30.2.25
+AT4G20650	signalling.receptor kinases.misc	30.2.99
+AT1G70130	signalling.receptor kinases.misc	30.2.99
+AT1G51860	signalling.receptor kinases.misc	30.2.99
+AT2G19210	signalling.receptor kinases.misc	30.2.99
+AT1G63560	signalling.receptor kinases.misc	30.2.99
+AT2G41860	signalling.calcium	30.3
+AT1G76640	signalling.calcium	30.3
+AT1G24620	signalling.calcium	30.3
+AT1G08860	signalling.calcium	30.3
+AT1G01460	signalling.phosphinositides.phosphatidylinositol-4-phosphate 5-kinase	30.4.1
+AT1G52240	signalling.G-proteins	30.5
+AT3G24620	signalling.G-proteins	30.5
+AT1G27380	signalling.G-proteins	30.5
+AT1G26480	signalling.14-3-3 proteins	30.7
+AT1G28270	signalling.misc	30.8
+AT3G42060	cell.organisation	31.1
+AT3G10180	cell.organisation	31.1
+AT3G46520	cell.organisation	31.1
+AT1G32010	cell.organisation	31.1
+AT5G52360	cell.organisation	31.1
+AT5G54700	cell.organisation	31.1
+AT1G01750	cell.organisation	31.1
+AT5G05490	cell.division	31.2
+AT5G48390	cell.division	31.2
+AT3G09530	cell.vesicle transport	31.4
+AT1G47920	cell.vesicle transport	31.4
+AT1G61290	cell.vesicle transport	31.4
+AT5G44120	development.storage proteins	33.1
+AT1G03880	development.storage proteins	33.1
+AT4G27170	development.storage proteins	33.1
+AT5G60520	development.late embryogenesis abundant	33.2
+AT2G36640	development.late embryogenesis abundant	33.2
+AT3G22500	development.late embryogenesis abundant	33.2
+AT2G41280	development.late embryogenesis abundant	33.2
+AT1G30950	development.unspecified	33.99
+AT2G31085	development.unspecified	33.99
+AT5G07930	development.unspecified	33.99
+AT1G06225	development.unspecified	33.99
+AT5G57810	development.unspecified	33.99
+AT5G13790	development.unspecified	33.99
+AT1G79760	development.unspecified	33.99
+AT1G72960	development.unspecified	33.99
+AT1G02580	development.unspecified	33.99
+AT3G56700	development.unspecified	33.99
+AT1G75930	development.unspecified	33.99
+AT1G71680	transport.amino acids	34.3
+AT5G60770	transport.nitrate	34.4
+AT5G43340	transport.phosphate	34.7
+AT3G52080	transport.metal	34.12
+AT2G28170	transport.metal	34.12
+AT1G31260	transport.metal	34.12
+AT1G16380	transport.metal	34.12
+AT1G53270	transport.ABC transporters and multidrug resistance systems	34.16
+AT4G15230	transport.ABC transporters and multidrug resistance systems	34.16
+AT3G17690	transport.cyclic nucleotide or calcium regulated channels	34.22
+AT1G64820	transport.misc	34.99
+AT4G34580	transport.misc	34.99
+AT2G05290	not assigned.no ontology	35.1
+AT5G36720	not assigned.no ontology	35.1
+AT3G15600	not assigned.no ontology	35.1
+AT2G41570	not assigned.no ontology	35.1
+AT3G54240	not assigned.no ontology	35.1
+AT4G20000	not assigned.no ontology	35.1
+AT1G29770	not assigned.no ontology	35.1
+AT5G63730	not assigned.no ontology	35.1
+AT4G19250	not assigned.no ontology	35.1
+AT3G29690	not assigned.no ontology	35.1
+AT1G70400	not assigned.no ontology	35.1
+AT3G53550	not assigned.no ontology	35.1
+AT3G05920	not assigned.no ontology	35.1
+AT1G52460	not assigned.no ontology	35.1
+AT5G39970	not assigned.no ontology	35.1
+AT4G36700	not assigned.no ontology	35.1
+AT2G19250	not assigned.no ontology	35.1
+AT5G23470	not assigned.no ontology	35.1
+AT5G12060	not assigned.no ontology	35.1
+AT5G52680	not assigned.no ontology	35.1
+AT2G01780	not assigned.no ontology	35.1
+AT2G42140	not assigned.no ontology	35.1
+AT1G43880	not assigned.no ontology	35.1
+AT1G18310	not assigned.no ontology	35.1
+AT5G23840	not assigned.no ontology	35.1
+AT1G06340	not assigned.no ontology.agenet domain-containing protein	35.1.2
+AT1G09190	not assigned.no ontology.pentatricopeptide (PPR) repeat-containing protein	35.1.5
+AT4G14050	not assigned.no ontology.pentatricopeptide (PPR) repeat-containing protein	35.1.5
+AT2G26790	not assigned.no ontology.pentatricopeptide (PPR) repeat-containing protein	35.1.5
+AT2G44880	not assigned.no ontology.pentatricopeptide (PPR) repeat-containing protein	35.1.5
+AT1G61840	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT3G27480	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT5G40320	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT4G02190	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT2G02680	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT2G02630	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT4G09690	not assigned.no ontology.DC1 domain containing protein	35.1.26
+AT4G33610	not assigned.no ontology.glycine rich proteins	35.1.40
+AT2G26120	not assigned.no ontology.glycine rich proteins	35.1.40
+AT4G15150	not assigned.no ontology.glycine rich proteins	35.1.40
+AT2G05580	not assigned.no ontology.glycine rich proteins	35.1.40
+AT2G04063	not assigned.no ontology.glycine rich proteins	35.1.40
+AT5G07510	not assigned.no ontology.glycine rich proteins	35.1.40
+AT5G26070	not assigned.no ontology.hydroxyproline rich proteins	35.1.41
+AT2G34870	not assigned.no ontology.hydroxyproline rich proteins	35.1.41
+AT5G19800	not assigned.no ontology.hydroxyproline rich proteins	35.1.41
+AT1G63540	not assigned.no ontology.hydroxyproline rich proteins	35.1.41
+AT4G38080	not assigned.no ontology.hydroxyproline rich proteins	35.1.41
+AT1G61080	not assigned.no ontology.proline rich family	35.1.42
+AT3G29220	not assigned.unknown	35.2
+AT4G01110	not assigned.unknown	35.2
+AT5G62330	not assigned.unknown	35.2
+AT2G29880	not assigned.unknown	35.2
+AT4G17585	not assigned.unknown	35.2
+AT1G55950	not assigned.unknown	35.2
+AT5G35250	not assigned.unknown	35.2
+AT1G31620	not assigned.unknown	35.2
+AT2G34580	not assigned.unknown	35.2
+AT5G38400	not assigned.unknown	35.2
+AT4G03570	not assigned.unknown	35.2
+AT3G43330	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT2G16190	not assigned.unknown	35.2
+AT1G50760	not assigned.unknown	35.2
+AT5G09940	not assigned.unknown	35.2
+AT3G46380	not assigned.unknown	35.2
+AT5G36720	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT5G10040	not assigned.unknown	35.2
+AT4G08820	not assigned.unknown	35.2
+AT5G46115	not assigned.unknown	35.2
+AT3G43680	not assigned.unknown	35.2
+AT4G10410	not assigned.unknown	35.2
+AT3G32300	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G15240	not assigned.unknown	35.2
+AT1G05040	not assigned.unknown	35.2
+AT1G29620	not assigned.unknown	35.2
+AT1G30140	not assigned.unknown	35.2
+AT5G30380	not assigned.unknown	35.2
+AT1G76910	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT5G57400	not assigned.unknown	35.2
+AT5G29030	not assigned.unknown	35.2
+AT4G39675	not assigned.unknown	35.2
+AT1G63930	not assigned.unknown	35.2
+AT2G15360	not assigned.unknown	35.2
+AT4G33560	not assigned.unknown	35.2
+AT4G36170	not assigned.unknown	35.2
+AT1G33710	not assigned.unknown	35.2
+AT3G30310	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G07120	not assigned.unknown	35.2
+AT5G36900	not assigned.unknown	35.2
+AT2G20170	not assigned.unknown	35.2
+AT3G47270	not assigned.unknown	35.2
+AT3G32200	not assigned.unknown	35.2
+AT3G18180	not assigned.unknown	35.2
+AT5G34895	not assigned.unknown	35.2
+AT2G07510	not assigned.unknown	35.2
+AT1G55050	not assigned.unknown	35.2
+AT5G44415	not assigned.unknown	35.2
+AT3G24260	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G30370	not assigned.unknown	35.2
+AT2G20616	not assigned.unknown	35.2
+AT1G02540	not assigned.unknown	35.2
+AT5G27170	not assigned.unknown	35.2
+AT5G35870	not assigned.unknown	35.2
+AT1G35900	not assigned.unknown	35.2
+AT1G57906	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT4G00130	not assigned.unknown	35.2
+AT5G04010	not assigned.unknown	35.2
+AT4G00910	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G46696	not assigned.unknown	35.2
+AT4G20650	not assigned.unknown	35.2
+AT1G54880	not assigned.unknown	35.2
+AT3G63020	not assigned.unknown	35.2
+AT4G08270	not assigned.unknown	35.2
+AT4G08130	not assigned.unknown	35.2
+AT5G36090	not assigned.unknown	35.2
+AT1G36510	not assigned.unknown	35.2
+AT3G19920	not assigned.unknown	35.2
+AT2G04380	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT5G42900	not assigned.unknown	35.2
+AT5G64720	not assigned.unknown	35.2
+AT2G06330	not assigned.unknown	35.2
+AT2G14630	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G54470	not assigned.unknown	35.2
+AT3G43760	not assigned.unknown	35.2
+AT3G14670	not assigned.unknown	35.2
+AT2G27280	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G24750	not assigned.unknown	35.2
+AT1G69470	not assigned.unknown	35.2
+AT3G31940	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT2G03830	not assigned.unknown	35.2
+AT5G39930	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G48770	not assigned.unknown	35.2
+AT3G52770	not assigned.unknown	35.2
+AT2G11650	not assigned.unknown	35.2
+AT3G20180	not assigned.unknown	35.2
+AT5G41860	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT5G66985	not assigned.unknown	35.2
+AT5G10210	not assigned.unknown	35.2
+AT1G75360	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+ATMG01300	not assigned.unknown	35.2
+AT1G12180	not assigned.unknown	35.2
+AT4G22420	not assigned.unknown	35.2
+AT2G04800	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT2G39370	not assigned.unknown	35.2
+AT2G19290	not assigned.unknown	35.2
+AT1G10530	not assigned.unknown	35.2
+AT2G31700	not assigned.unknown	35.2
+AT5G07380	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT2G04580	not assigned.unknown	35.2
+AT5G50500	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G30500	not assigned.unknown	35.2
+AT5G56570	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G58120	not assigned.unknown	35.2
+AT1G50930	not assigned.unknown	35.2
+AT1G42710	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G60990	not assigned.unknown	35.2
+AT1G52460	not assigned.unknown	35.2
+AT1G23270	not assigned.unknown	35.2
+AT3G29080	not assigned.unknown	35.2
+AT3G26110	not assigned.unknown	35.2
+AT1G62690	not assigned.unknown	35.2
+AT4G36120	not assigned.unknown	35.2
+AT4G02910	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT5G67040	not assigned.unknown	35.2
+AT5G18510	not assigned.unknown	35.2
+AT2G14730	not assigned.unknown	35.2
+AT3G25182	not assigned.unknown	35.2
+AT3G42590	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G11350	not assigned.unknown	35.2
+AT1G26530	not assigned.unknown	35.2
+AT5G57310	not assigned.unknown	35.2
+AT4G13690	not assigned.unknown	35.2
+AT2G11166	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G54540	not assigned.unknown	35.2
+AT4G08750	not assigned.unknown	35.2
+AT4G40020	not assigned.unknown	35.2
+AT3G29750	not assigned.unknown	35.2
+AT3G30650	not assigned.unknown	35.2
+AT4G09850	not assigned.unknown	35.2
+AT5G66815	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G54860	not assigned.unknown	35.2
+AT2G10900	not assigned.unknown	35.2
+AT4G09270	not assigned.unknown	35.2
+AT5G35340	not assigned.unknown	35.2
+AT3G57210	not assigned.unknown	35.2
+AT4G31260	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G28135	not assigned.unknown	35.2
+AT3G28190	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT1G05920	not assigned.unknown	35.2
+AT5G32540	not assigned.unknown	35.2
+AT5G15890	not assigned.unknown	35.2
+AT1G35040	not assigned.unknown	35.2
+AT4G02090	not assigned.unknown	35.2
+AT1G64405	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT3G50200	not assigned.unknown	35.2
+AT4G03750	not assigned.unknown	35.2
+AT1G61930	not assigned.unknown	35.2
+AT3G30190	not assigned.unknown	35.2
+AT5G43000	not assigned.unknown	35.2
+AT5G17100	not assigned.unknown	35.2
+AT2G17070	not assigned.unknown	35.2
+AT2G17940	not assigned.unknown	35.2
+AT5G28880	not assigned.unknown	35.2
+ATCH	not assigned.unknown	35.2
+AT2G13760	not assigned.unknown	35.2
+AT3G13130	not assigned.unknown	35.2
+AT4G19620	not assigned.unknown	35.2
+AT2G07736	not assigned.disagreeing hits	35.3
+AT1G69710	not assigned.disagreeing hits	35.3
+AT3G44470	not assigned.disagreeing hits	35.3
