@@ -1,0 +1,201 @@
+import os
+import pickle
+import pandas as pd
+import numpy as np
+from collections import defaultdict
+
+
+ROOT_PATH = ""  # Define the root path where data is stored
+R_DATA_DIR = ""  # Define the path to store R data
+FDR_METHOD = "fdr"  # You can change this to 'P' or any other method for FDR calculation
+
+
+def set_ref_annot(path_input, pathway, output, output_hyper, corr_genes_population, type_):
+    pathways_path = os.path.join(ROOT_PATH, f"{pathway}.txt")
+
+    ref_ec = defaultdict(str)
+    ref_pathways = defaultdict(dict)
+    ref_corr_met = defaultdict(str)
+    ref_pop = defaultdict(list)
+    ref = {}
+
+    count_total_genes_pathway = 0
+    count_corr_genes_pathways = 0
+
+    genes_pathways = []
+    corr_genes_metabol = []
+
+    # Open the correlation-metabolites pathway file
+    with open(path_input, "r") as corr_file:
+        for line in corr_file:
+            a = line.strip().split("\t")
+            ref_corr_met[a[1]] += a[0] + ","
+            ref_pop[a[0]] = []
+
+    # Open the pathways file
+    with open(pathways_path, "r") as pathways_file:
+        print(f"Test 31 {pathways_path}")
+        for line in pathways_file:
+            line = line.strip()
+            a = line.split("\t")
+
+            if type_ == 'mapman':
+                set_mapman_annot(ref_pathways, a)
+            else:
+                ref_pathways[a[1]]['gene'] = ref_pathways[a[1]].get('gene', '') + a[0] + ","
+
+            ref_ec[a[0]] += a[2] + ","
+            genes_pathways.append(a[0])
+
+            if a[0] in ref_pop:
+                corr_genes_population.append(f"{a[0]}\t{a[1]}")
+                ref_pop[a[0]].append(a[1])
+
+    genes_pathways = list(set(genes_pathways))  # Remove duplicates
+
+    # Process metabolite-correlation data
+    for metabol in sorted(ref_corr_met.keys()):
+        genes = list(set(ref_corr_met[metabol].split(",")))
+        corr_genes_metabol = []
+
+        for gene in genes:
+            if gene:
+                for pathway in sorted(ref_pathways.keys()):
+                    if gene in ref_pathways[pathway].get('gene', ''):
+                        corr_genes_metabol.append(gene)
+                        ref[metabol][pathway] = {
+                            "CORR": ref[metabol].get(pathway, {}).get('CORR', '') + gene + ",",
+                            "EC": ref_ec[gene],
+                            "OVERALL_GENES_PATWAYS": len(genes_pathways)
+                        }
+                        if 'level' in ref_pathways[pathway]:
+                            ref[metabol][pathway]['level'] = ref_pathways[pathway]['level']
+                            ref[metabol][pathway]['UPPER_CLASS'] = ref_pathways[pathway]['UPPER_CLASS']
+                            ref[metabol][pathway]['ROOT_CLASS'] = ref_pathways[pathway]['ROOT_CLASS']
+
+        ref[metabol]['CORR_GENES_METABOLOM'] = len(corr_genes_metabol)
+        ref[metabol]['CORR_GENES_METABOLOM_LIST'] = corr_genes_metabol
+
+    # Update the dictionary with genes and pathways information
+    for metabol in sorted(ref.keys()):
+        corr_genes_metabol2 = ref[metabol].get('CORR_GENES_METABOLOM')
+
+        if pathway == "GO":
+            set_genes_go_annot(ref_pop, ref, metabol, output_hyper)
+
+        ref[metabol].pop('CORR_GENES_METABOLOM', None)
+        ref[metabol].pop('CORR_GENES_METABOLOM_LIST', None)
+
+        for pathway in sorted(ref[metabol].keys()):
+            ref[metabol][pathway]['CORR_GENES_METABOLOM'] = corr_genes_metabol2
+            ref[metabol][pathway]['GENES_PATHWAY'] = get_count_genes(ref_pathways[pathway].get('gene', ''))
+            ref[metabol][pathway]['GENES'] = ref[metabol][pathway].get('CORR', '')
+            ref[metabol][pathway]['EC'] = uniq_list_from_text(ref[metabol][pathway].get('EC', ''))
+            ref[metabol][pathway]['CORR'] = get_count_genes(ref[metabol][pathway].get('CORR', ''))
+
+    # Save the result
+    with open(output, 'wb') as output_file:
+        pickle.dump(ref, output_file)
+
+
+def set_mapman_annot(ref_pathways, a):
+    filter_ = "secondary metabolism"
+    filter2 = ""
+
+    if a[1].find(filter_) != -1:
+        filter2 = filter_
+
+    bin_ = f"{a[1]}[{a[2]}]"
+    annot = bin_.split(".")[0]
+    bin_ = bin_.split(".")[1]
+
+    level = 0
+    string = ""
+    parent_string = ""
+    for annot_item in annot.split("."):
+        level += 1
+        annot_item = annot_item.strip("\"")
+        string += f"{annot_item}."
+
+        ref_pathways[string] = ref_pathways.get(string, {})
+        ref_pathways[string]['gene'] = ref_pathways[string].get('gene', '') + a[0] + ","
+        ref_pathways[string]['level'] = level
+
+        if level > 1:
+            ref_pathways[string]['UPPER_CLASS'] = parent_string
+            ref_pathways[string]['ROOT_CLASS'] = annot[0]
+
+        parent_string = string
+
+
+def set_genes_go_annot(ref_pop, ref, metabol, output_hyper):
+    annot = []
+
+    with open(f"{output_hyper}{metabol}_GENES_SUBSET.txt", 'w') as genes_file:
+        for g in ref[metabol]['CORR_GENES_METABOLOM_LIST']:
+            for go in ref_pop.get(g, []):
+                annot.append(f"{g}\t{go}")
+
+        annot = list(set(annot))  # Remove duplicates
+        genes_file.write("\n".join(annot))
+
+
+def calc_hyper_pathways(path, output, type_):
+    with open(path, 'rb') as input_file:
+        ref = pickle.load(input_file)
+
+    count = 0
+    for metabol in sorted(ref.keys()):
+        p_values = []
+
+        for pathway in sorted(ref[metabol].keys()):
+            if 'level' in ref[metabol][pathway]:
+                h = calc_phyper(ref[metabol][pathway]['CORR'], ref[metabol][pathway]['CORR_GENES_METABOLOM'],
+                                ref[metabol][pathway]['OVERALL_GENES_PATWAYS'] - ref[metabol][pathway]['CORR_GENES_METABOLOM'],
+                                ref[metabol][pathway]['GENES_PATHWAY'])
+
+                ref[metabol][pathway]['P'] = h['p']
+                ref[metabol][pathway]['vars'] = h['vars']
+
+                p_values.append(h['p'])
+
+                count += 1
+                print(f"count pathway '{pathway}' - vars: {h['vars']} P - {h['p']}")
+
+        if FDR_METHOD != "P":
+            calc_fdr(p_values)
+            set_fdr(ref[metabol])
+
+    with open(output, 'wb') as output_file:
+        pickle.dump(ref, output_file)
+
+
+def set_fdr(ref):
+    fdr = {}
+    with open(os.path.join(R_DATA_DIR, 'fdr.out'), 'r') as fdr_file:
+        for line in fdr_file:
+            match = line.strip().split('[')
+            if match:
+                a = match[1].split(']')
+                fdr[int(a[0])] = float(a[1])
+
+    for pathway in sorted(ref.keys()):
+        for p in sorted(fdr.keys()):
+            if ref[pathway].get('P') == p:
+                ref[pathway][FDR_METHOD] = fdr[p]
+
+
+def get_count_genes(genes):
+    return len(genes.split(","))
+
+
+def uniq_list_from_text(text):
+    return ','.join(list(set(text.split(","))))  # Remove duplicates
+
+
+def calc_phyper(corr, corr_genes_metabol, total_genes, genes_pathway):
+    # Placeholder function for hypergeometric calculation
+    p_value = np.random.random()  # Simulated p-value
+    vars_ = "SomeVars"  # Placeholder for variables
+
+    return {'p': p_value, 'vars': vars_}
