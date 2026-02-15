@@ -1,0 +1,144 @@
+import subprocess
+import numpy as np
+from scipy.stats import spearmanr
+import os
+
+R_DATA_DIR = "/path/to/R/data"  # Set your R data directory
+FDR_METHOD = "fdr"  # Example FDR method (e.g., "fdr", "bonferroni", etc.)
+
+def calc_phyper(x, m, n, k):
+    """
+    Calculates hypergeometric probability using R.
+    """
+    # Create the R script for phyper calculation
+    hyper_file = os.path.join(R_DATA_DIR, "hyper.R")
+    with open(hyper_file, 'w') as f:
+        f.write(f"sink(file=\"{R_DATA_DIR}phyper.out\");\n")
+        f.write(f"1 - phyper({x}, {m}, {n}, {k})\n")
+
+    # Run R script
+    try:
+        subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {hyper_file}"], check=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+        return None
+
+    # Read output
+    with open(os.path.join(R_DATA_DIR, "phyper.out"), 'r') as f:
+        p_value = f.read().strip()
+
+    if not p_value:
+        raise ValueError("Error in R script output")
+
+    result = {"vars": f"1 - phyper({x}, {m}, {n}, {k})", "p": float(p_value)}
+    return result
+
+
+def calc_spearman(x, y):
+    """
+    Calculates Spearman correlation coefficient using R.
+    """
+    # Create the R script for Spearman calculation
+    corr_file = os.path.join(R_DATA_DIR, "corr.R")
+    with open(corr_file, 'w') as f:
+        f.write(f"sink(file=\"{R_DATA_DIR}corr.out\");\n")
+        f.write(f"x <-c({','.join(map(str, x))})\n")
+        f.write(f"y <-c({','.join(map(str, y))})\n")
+        f.write("c = cor.test(x, y, method = 'spearman')\n")
+        f.write("cat('p=', unlist(c['p.value']), ',', 'r=', unlist(c['estimate']))\n")
+
+    # Run R script
+    try:
+        subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {corr_file}"], check=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+        return None
+
+    # Read output
+    with open(os.path.join(R_DATA_DIR, "corr.out"), 'r') as f:
+        line = f.read().strip()
+
+    p_value = None
+    r_value = None
+    for part in line.split(","):
+        if "p=" in part:
+            p_value = float(part.split("=")[-1].strip())
+        if "r=" in part:
+            r_value = float(part.split("=")[-1].strip())
+
+    return p_value, r_value
+
+
+def set_gplots_tiles_R(output, plots):
+    """
+    Generates and saves a heatmap plot using ggplot2 in R.
+    """
+    output = output.replace("'", "").replace("(", "").replace(")", "").replace("%", "")
+    
+    gplot_file = os.path.join(R_DATA_DIR, "gplot_tile.R")
+    with open(gplot_file, 'w') as f:
+        f.write("library(reshape)\n")
+        f.write("library(ggplot2)\n")
+        f.write("library(grid)\n")
+        f.write(f"pdf('{output}')\n")
+        f.write(plots)
+        f.write("dev.off()\n")
+
+    # Run R script
+    try:
+        subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {gplot_file}"], check=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+
+
+def set_heatmap_R(output, plots):
+    """
+    Generates and saves a heatmap using gplots in R.
+    """
+    output = output.replace("'", "").replace("(", "").replace(")", "").replace("%", "")
+
+    heatmap_file = os.path.join(R_DATA_DIR, "heatmap.R")
+    with open(heatmap_file, 'w') as f:
+        f.write("library(gplots)\n")
+        f.write(f"pdf('{output}')\n")
+        f.write(plots)
+        f.write("dev.off()\n")
+
+    # Run R script
+    try:
+        subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {heatmap_file}"], check=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+
+
+def calc_fdr(p):
+    """
+    Calculates False Discovery Rate (FDR) using R.
+    """
+    fdr_file = os.path.join(R_DATA_DIR, "fdr.R")
+    with open(fdr_file, 'w') as f:
+        f.write(f"sink(file=\"{R_DATA_DIR}fdr.out\");\n")
+        f.write(f"library('fdrtool');\n")
+        f.write(f"p <- c({','.join(map(str, p))});\n")
+        f.write(f"fdr = p.adjust(p, method = '{FDR_METHOD}');\n")
+        f.write("c = cbind(p, fdr);\n")
+        f.write("c\n")
+
+    # Run R script
+    try:
+        subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {fdr_file}"], check=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+
+
+def get_tukey_biweight(lib):
+    """
+    Calculates Tukey biweight using R.
+    """
+    tukey_file = os.path.join(R_DATA_DIR, "calcAvg.R")
+    try:
+        result = subprocess.run(["R", "-q", "--no-save", "-gui=none", f"< {tukey_file}"], check=True, capture_output=True)
+        return result.stdout.decode().split("\n")[0]
+    except subprocess.CalledProcessError as e:
+        print(f"Error running R script: {e}")
+        return None
