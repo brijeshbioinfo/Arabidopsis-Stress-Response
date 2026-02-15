@@ -22,3 +22,75 @@ Detailed analysis was performed on gene expression data obtained from RNA-Seq. T
 - Methodology: `methodology.txt`
 - Code: `code/matlab_scripts.m`
 - Supplementary Files: `supplementary_files/`
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+pip install -r requirements.txt
+
+
+Now, for the **code transition from Perl to Python**, here's an outline of steps to follow for each section of the code:
+
+### 1. **Set Reference Data**
+In Python, you'll likely be using `pandas` for handling your datasets (e.g., CSVs or Excel files). For storing and manipulating large datasets, you can use `pandas.DataFrame`.
+
+```python
+import pandas as pd
+
+def set_ref_data():
+    # Example for reading your transcript data
+    transcription_df = pd.read_csv("data/all_RILs_RNAseq_floor.txt", sep='\t')
+    # Process data as needed
+    return transcription_df
+### 1. **Set Reference Data**
+In Python, you'll likely be using `pandas` for handling your datasets (e.g., CSVs or Excel files). For storing and manipulating large datasets, you can use `pandas.DataFrame`.
+
+```python
+import pandas as pd
+
+def set_ref_data():
+    # Example for reading your transcript data
+    transcription_df = pd.read_csv("data/all_RILs_RNAseq_floor.txt", sep='\t')
+    # Process data as needed
+    return transcription_df
+###2. Correlation Calculation
+import numpy as np
+from scipy.stats import spearmanr
+
+def calc_correlation(ref_exp, ref_met):
+    correlations = {}
+    for gene in ref_exp:
+        for type_ in ref_exp[gene]:
+            x = []
+            metabolites = {}
+            
+            for ril in ref_exp[gene][type_]:
+                x.append(ref_exp[gene][type_][ril])
+                # Example to fetch metabolite data
+                for metabolite in ref_met[ril]:
+                    metabolites.setdefault(metabolite, []).append(ref_met[ril][metabolite])
+            
+            for metabolite in metabolites:
+                y = metabolites[metabolite]
+                p, r = spearmanr(x, y)
+                correlations[(gene, type_, metabolite)] = {'p': p, 'r': r}
+    
+    return correlations
+3. Heatmap Generation
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def generate_heatmap(data, output_path):
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(data, annot=True, cmap='coolwarm')
+    plt.savefig(output_path)
+    plt.close()
+
+4. Enrichment Analysis
+from scipy.stats import hypergeom
+
+def calc_hypergeometric(data, M, N, K):
+    # Example calculation for hypergeometric distribution
+    return hypergeom.cdf(data, M, N, K)
+
