@@ -1,0 +1,24 @@
+# Multidimensional patterns of metabolic response in abiotic stress-induced growth of Arabidopsis thaliana
+
+## Overview
+This project investigates the metabolic responses of Arabidopsis thaliana under various abiotic stress conditions using the AtGenExpress dataset from the NCBI GEO platform.
+
+## Dataset
+- GSE5620: Control Plant
+- GSE5621: Cold Stress
+- GSE5622: Osmotic Stress
+- GSE5623: Salt Stress
+- GSE5624: Drought Stress
+- GSE5625: Genotoxic Stress
+- GSE5626: UV-B Stress
+- GSE5627: Wounding Stress
+- GSE5628: Heat Stress
+
+## Methods
+Detailed analysis was performed on gene expression data obtained from RNA-Seq. The project uses the Affymetrix Arabidopsis ATH1 Genome Array (GPL198) and MATLAB for pathway association calculations.
+
+## Files
+- Paper: `paper.pdf`
+- Methodology: `methodology.txt`
+- Code: `code/matlab_scripts.m`
+- Supplementary Files: `supplementary_files/`
