@@ -1,0 +1,42 @@
+import numpy as np
+import pandas as pd
+
+# Read Excel files using pandas
+data1 = pd.read_excel(r'D:\My Documents\MATLAB\data1.xls', header=None).values.T
+data2 = pd.read_excel(r'D:\My Documents\MATLAB\data2.xls', header=None).values.T
+
+# Change numbers to 1/0 based on the threshold 0.05
+data1[data1 < 0.05] = 1
+data1[data1 >= 0.05] = 0
+
+data2[data2 < 0.05] = 1
+data2[data2 >= 0.05] = 0
+
+# Jaccard similarity calculation
+Jaccard = np.zeros((data1.shape[1], data2.shape[1]))
+
+for d1 in range(data1.shape[1]):  # Iterate over columns of data1
+    sum_A = np.sum(data1[:, d1])
+    if sum_A > 0:
+        for d2 in range(data2.shape[1]):  # Iterate over columns of data2
+            sum_B = np.sum(data2[:, d2])
+            if sum_B > 0:
+                sum_AB = np.sum(data1[:8, d1] * data2[:8, d2])
+                sum_A_or_B = np.sum((data1[:8, d1] + data2[:8, d2]) > 0)
+                Jaccard[d1, d2] = sum_AB / sum_A_or_B
+
+# Print the Jaccard similarity matrix
+print(Jaccard)
+
+# Optional: output the results to Excel
+# Get row and column names from the original Excel sheets (if needed)
+first_row1 = pd.read_excel(r'D:\My Documents\MATLAB\data1.xls', header=None).iloc[0, 1:].values
+first_row2 = pd.read_excel(r'D:\My Documents\MATLAB\data2.xls', header=None).iloc[0, 1:].values
+
+# Create a DataFrame from the Jaccard matrix and set the proper column/row names
+jaccard_df = pd.DataFrame(Jaccard, index=first_row1, columns=first_row2)
+
+# Write to Excel
+jaccard_df.to_excel(r'D:\My Documents\My Desktop\output.xlsx', sheet_name='Sheet1')
+
+print("Jaccard matrix has been written to output.xlsx.")
